@@ -43,7 +43,7 @@
   }
   
   body {
-    @apply bg-background text-foreground font-inter antialiased;
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] font-inter antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
 }
@@ -62,7 +62,7 @@
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--primary)/_0.7)];
   }
   
   .animations-enabled .fade-in {
@@ -87,15 +87,15 @@
   }
   
   ::-webkit-scrollbar-track {
-    @apply bg-secondary;
+    @apply bg-[hsl(var(--secondary))];
   }
   
   ::-webkit-scrollbar-thumb {
-    @apply bg-primary/20 rounded-full transition-colors duration-300 ease-in-out;
+    @apply bg-[hsl(var(--primary)/_0.2)] rounded-full transition-colors duration-300 ease-in-out;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/40;
+    @apply bg-[hsl(var(--primary)/_0.4)];
   }
 
   /* Animations */
@@ -182,3 +182,4 @@
     animation-delay: 500ms;
   }
 }
+
