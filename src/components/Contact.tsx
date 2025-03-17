@@ -43,7 +43,7 @@ const Contact = () => {
   
   return (
     <section 
-      name="Contacts" 
+      id="Contacts" 
       className="relative py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden"
     >
       {/* Background Elements */}

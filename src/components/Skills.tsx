@@ -67,7 +67,7 @@ const Skills = () => {
 
   return (
     <section 
-      name="Skills" 
+      id="Skills" 
       className="relative py-24 bg-gray-50 overflow-hidden"
     >
       {/* Background Elements */}

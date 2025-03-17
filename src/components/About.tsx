@@ -5,7 +5,7 @@ import { IntersectionObserverComponent } from "../utils/IntersectionObserver";
 const About = () => {
   return (
     <section 
-      name="About" 
+      id="About" 
       className="relative py-24 bg-white overflow-hidden"
     >
       {/* Background Elements */}

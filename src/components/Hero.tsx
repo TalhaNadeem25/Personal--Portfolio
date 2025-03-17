@@ -40,7 +40,7 @@ const Hero = () => {
 
   return (
     <section 
-      name="Home" 
+      id="Home" 
       className="relative min-h-screen w-full flex items-center bg-gradient-to-b from-white to-gray-50 overflow-hidden"
     >
       {/* Background Elements */}
