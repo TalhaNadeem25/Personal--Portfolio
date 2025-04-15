@@ -1,4 +1,3 @@
-
 import React from "react";
 import { IntersectionObserverComponent } from "../utils/IntersectionObserver";
 
@@ -19,7 +18,7 @@ const SkillCard = ({ skill, index }: { skill: any, index: number }) => {
       animationClass="opacity-0"
       rootMargin="0px 0px -50px 0px"
     >
-      <div 
+      <div
         className="relative h-full p-6 rounded-2xl bg-white border border-gray-100 hover:border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
         style={{ 
           transitionDelay: `${index * 50}ms`,
@@ -27,7 +26,7 @@ const SkillCard = ({ skill, index }: { skill: any, index: number }) => {
         }}
       >
         <div className="mb-4 relative">
-          <div className="w-16 h-16 mx-auto relative flex items-center justify-center">
+          <div className="w-16 h-16 mx-auto relative flex items-center justify-center bg-gray-50 rounded-xl">
             <div 
               className="absolute inset-0 rounded-xl opacity-10"
               style={{ backgroundColor: skill.color }}
@@ -36,6 +35,10 @@ const SkillCard = ({ skill, index }: { skill: any, index: number }) => {
               src={skill.image}
               alt={`${skill.name} icon`}
               className="w-10 h-10 object-contain relative z-10 transition-transform duration-300 group-hover:scale-110"
+              onError={(e) => {
+                console.error(`Error loading image for ${skill.name}:`, e);
+                e.currentTarget.style.display = 'none';
+              }}
             />
           </div>
         </div>
