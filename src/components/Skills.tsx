@@ -2,7 +2,7 @@
 import React from "react";
 import { IntersectionObserverComponent } from "../utils/IntersectionObserver";
 
-import reactIcon from "../assets/1174949_js_react js_logo_react_react native_icon.png";
+import reactIcon from "../assets/1174949_js_react js_logo_react js_react native_icon.png";
 import javaIcon from "../assets/4373217_java_logo_logos_icon.png";
 import cssIcon from "../assets/css-3.png";
 import database from "../assets/database-storage.png";
@@ -15,12 +15,12 @@ import nodejs from "../assets/nodejs.png";
 const SkillCard = ({ skill, index }: { skill: any, index: number }) => {
   return (
     <IntersectionObserverComponent 
-      className={`group`}
+      className="group"
       animationClass="opacity-0"
       rootMargin="0px 0px -50px 0px"
     >
       <div 
-        className="relative h-full p-6 rounded-2xl bg-white border border-gray-100 hover:border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+        className="relative h-full p-6 rounded-2xl glass-dark transition-all duration-500 transform hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(66,220,255,0.3)]"
         style={{ 
           transitionDelay: `${index * 50}ms`,
           animationDelay: `${index * 50}ms`
@@ -29,7 +29,7 @@ const SkillCard = ({ skill, index }: { skill: any, index: number }) => {
         <div className="mb-4 relative">
           <div className="w-16 h-16 mx-auto relative flex items-center justify-center">
             <div 
-              className="absolute inset-0 rounded-xl opacity-10"
+              className="absolute inset-0 rounded-xl opacity-20"
               style={{ backgroundColor: skill.color }}
             ></div>
             <img
@@ -40,13 +40,20 @@ const SkillCard = ({ skill, index }: { skill: any, index: number }) => {
           </div>
         </div>
         
-        <h3 className="text-center text-lg font-medium">{skill.name}</h3>
+        <h3 className="text-center text-lg font-medium text-gray-100">{skill.name}</h3>
         
-        {/* Decorative glow */}
+        {/* Glowing effect on hover */}
         <div
-          className="absolute inset-0 -z-10 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300"
+          className="absolute inset-0 -z-10 rounded-2xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-300 animate-pulse-slow"
           style={{ backgroundColor: skill.color }}
         ></div>
+        
+        {/* Animated border on hover */}
+        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-hidden">
+          <div className="absolute inset-0 rounded-2xl p-[1.5px]">
+            <div className="absolute inset-0 rounded-2xl animate-border-flow"></div>
+          </div>
+        </div>
       </div>
     </IntersectionObserverComponent>
   );
@@ -68,20 +75,24 @@ const Skills = () => {
   return (
     <section 
       id="Skills" 
-      className="relative py-24 bg-gray-50 overflow-hidden"
+      className="relative py-24 bg-[hsl(var(--background))] overflow-hidden futuristic-grid"
     >
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-noise opacity-30 pointer-events-none"></div>
-      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent"></div>
-      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent"></div>
+      <div className="absolute inset-0 bg-noise opacity-10 pointer-events-none"></div>
+      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[hsl(var(--background))] to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[hsl(var(--background))] to-transparent"></div>
+      
+      {/* Futuristic glow elements */}
+      <div className="absolute top-20 right-20 w-64 h-64 bg-blue-500/10 rounded-full filter blur-[100px]"></div>
+      <div className="absolute bottom-20 left-20 w-64 h-64 bg-cyan-500/10 rounded-full filter blur-[100px]"></div>
       
       <div className="container mx-auto px-6 lg:px-8">
         <IntersectionObserverComponent>
           <div className="mb-16 text-center">
-            <span className="inline-block mb-2 px-3 py-1 text-sm font-medium text-gray-900 bg-gray-200 rounded-full">
+            <span className="inline-block mb-2 px-3 py-1 text-sm font-medium text-cyan-300 bg-cyan-900/30 rounded-full border border-cyan-500/20">
               Expertise
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">
               Technical Skills
             </h2>
           </div>
