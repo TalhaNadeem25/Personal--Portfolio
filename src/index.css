@@ -7,39 +7,39 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 240 10% 3.9%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
     
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card: 222 47% 13%;
+    --card-foreground: 210 40% 98%;
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
     
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 210 100% 60%;
+    --primary-foreground: 210 40% 98%;
     
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 220 30% 18%;
+    --secondary-foreground: 210 40% 98%;
     
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 220 30% 18%;
+    --muted-foreground: 215 20% 65%;
     
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 190 90% 50%;
+    --accent-foreground: 210 40% 98%;
     
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 210 40% 98%;
     
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border: 220 30% 20%;
+    --input: 220 30% 20%;
+    --ring: 210 100% 60%;
     
     --radius: 0.75rem;
   }
   
   * {
-    @apply border-[#e5e7eb];
+    @apply border-[#2a2d3a];
   }
   
   body {
@@ -50,11 +50,11 @@
 
 @layer utilities {
   .glass {
-    @apply backdrop-blur-lg bg-white/20 border border-white/20;
+    @apply backdrop-blur-lg bg-white/10 border border-white/10;
   }
   
   .glass-dark {
-    @apply backdrop-blur-lg bg-black/20 border border-white/10;
+    @apply backdrop-blur-lg bg-black/30 border border-white/5;
   }
   
   .text-balance {
@@ -62,7 +62,25 @@
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--primary)/_0.7)];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--accent))];
+  }
+  
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400;
+  }
+  
+  .text-gradient-purple {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400;
+  }
+  
+  .neon-glow {
+    @apply relative;
+    text-shadow: 0 0 10px rgba(66, 220, 255, 0.5), 0 0 20px rgba(66, 220, 255, 0.3);
+  }
+  
+  .neon-box {
+    @apply relative overflow-hidden;
+    box-shadow: 0 0 10px rgba(66, 220, 255, 0.5), 0 0 20px rgba(66, 220, 255, 0.3);
   }
   
   .animations-enabled .fade-in {
@@ -83,7 +101,7 @@
   
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
   
   ::-webkit-scrollbar-track {
@@ -91,11 +109,11 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    @apply bg-[hsl(var(--primary)/_0.2)] rounded-full transition-colors duration-300 ease-in-out;
+    @apply bg-[hsl(var(--primary)/_0.5)] rounded-full transition-colors duration-300 ease-in-out;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-[hsl(var(--primary)/_0.4)];
+    @apply bg-[hsl(var(--primary)/_0.8)];
   }
 
   /* Animations */
@@ -137,6 +155,18 @@
       filter: blur(0);
     }
   }
+  
+  @keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(66, 220, 255, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(66, 220, 255, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(66, 220, 255, 0.5); }
+  }
+  
+  @keyframes border-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 
   .animate-float {
     animation: float 6s ease-in-out infinite;
@@ -162,6 +192,16 @@
     animation: blur-in 0.8s ease-out forwards;
   }
   
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+  
+  .animate-border-flow {
+    background: linear-gradient(90deg, rgba(66, 135, 255, 0.5), rgba(66, 220, 255, 0.5), rgba(66, 135, 255, 0.5));
+    background-size: 200% 100%;
+    animation: border-flow 3s ease infinite;
+  }
+  
   .animation-delay-100 {
     animation-delay: 100ms;
   }
@@ -180,5 +220,22 @@
   
   .animation-delay-500 {
     animation-delay: 500ms;
+  }
+  
+  .futuristic-grid {
+    background-image: radial-gradient(rgba(66, 220, 255, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  
+  .futuristic-border {
+    @apply relative;
+  }
+  
+  .futuristic-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-lg p-[1px] bg-gradient-to-r from-cyan-500 to-blue-500;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
   }
 }
