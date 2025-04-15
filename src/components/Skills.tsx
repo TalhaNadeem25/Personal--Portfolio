@@ -20,7 +20,7 @@ const SkillCard = ({ skill, index }: { skill: any, index: number }) => {
       rootMargin="0px 0px -50px 0px"
     >
       <div 
-        className="relative h-full p-6 rounded-2xl glass-dark transition-all duration-500 transform hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(66,220,255,0.3)]"
+        className="relative h-full p-6 rounded-2xl neo-glass transition-all duration-500 transform hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(66,220,255,0.25)]"
         style={{ 
           transitionDelay: `${index * 50}ms`,
           animationDelay: `${index * 50}ms`
@@ -29,7 +29,7 @@ const SkillCard = ({ skill, index }: { skill: any, index: number }) => {
         <div className="mb-4 relative">
           <div className="w-16 h-16 mx-auto relative flex items-center justify-center">
             <div 
-              className="absolute inset-0 rounded-xl opacity-20"
+              className="absolute inset-0 rounded-xl opacity-30 blur-[2px]"
               style={{ backgroundColor: skill.color }}
             ></div>
             <img
@@ -40,11 +40,11 @@ const SkillCard = ({ skill, index }: { skill: any, index: number }) => {
           </div>
         </div>
         
-        <h3 className="text-center text-lg font-medium text-gray-100">{skill.name}</h3>
+        <h3 className="text-center text-lg font-medium text-gray-100 group-hover:text-white group-hover:cyber-text transition-all duration-300">{skill.name}</h3>
         
         {/* Glowing effect on hover */}
         <div
-          className="absolute inset-0 -z-10 rounded-2xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-300 animate-pulse-slow"
+          className="absolute inset-0 -z-10 rounded-2xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-300 animate-pulse-slow"
           style={{ backgroundColor: skill.color }}
         ></div>
         
@@ -75,7 +75,7 @@ const Skills = () => {
   return (
     <section 
       id="Skills" 
-      className="relative py-24 bg-[hsl(var(--background))] overflow-hidden futuristic-grid"
+      className="relative py-24 bg-[hsl(var(--background))] overflow-hidden cyberpunk-grid"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-noise opacity-10 pointer-events-none"></div>
@@ -83,16 +83,16 @@ const Skills = () => {
       <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[hsl(var(--background))] to-transparent"></div>
       
       {/* Futuristic glow elements */}
-      <div className="absolute top-20 right-20 w-64 h-64 bg-blue-500/10 rounded-full filter blur-[100px]"></div>
-      <div className="absolute bottom-20 left-20 w-64 h-64 bg-cyan-500/10 rounded-full filter blur-[100px]"></div>
+      <div className="absolute top-40 right-40 w-72 h-72 bg-neon-blue/5 rounded-full filter blur-[100px]"></div>
+      <div className="absolute bottom-40 left-40 w-72 h-72 bg-neon-cyan/5 rounded-full filter blur-[100px]"></div>
       
       <div className="container mx-auto px-6 lg:px-8">
         <IntersectionObserverComponent>
           <div className="mb-16 text-center">
-            <span className="inline-block mb-2 px-3 py-1 text-sm font-medium text-cyan-300 bg-cyan-900/30 rounded-full border border-cyan-500/20">
+            <span className="inline-block mb-2 px-3 py-1 text-sm font-medium text-neon-blue bg-neon-blue/10 rounded-full border border-neon-blue/20">
               Expertise
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gradient">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight holo-text">
               Technical Skills
             </h2>
           </div>

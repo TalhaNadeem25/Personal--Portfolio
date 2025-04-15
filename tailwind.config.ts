@@ -53,6 +53,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        neon: {
+          blue: "#42dcff",
+          purple: "#9b87f5",
+          cyan: "#0af5e3",
+          pink: "#ff2cf0",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -60,7 +66,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {
@@ -97,6 +103,23 @@ export default {
             animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)",
           },
         },
+        "glow-pulse": {
+          "0%, 100%": { 
+            boxShadow: "0 0 15px 0px rgba(66, 220, 255, 0.3)"
+          },
+          "50%": { 
+            boxShadow: "0 0 30px 5px rgba(66, 220, 255, 0.6)"
+          },
+        },
+        "border-flow": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+        "text-shimmer": {
+          "0%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -106,6 +129,9 @@ export default {
         scaleIn: "scaleIn 0.3s ease-out forwards",
         pulse: "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "bounce-slow": "bounce-slow 4s infinite",
+        "glow-pulse": "glow-pulse 3s infinite",
+        "border-flow": "border-flow 3s linear infinite",
+        "text-shimmer": "text-shimmer 2s linear infinite",
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
