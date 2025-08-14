@@ -72,7 +72,7 @@ const Projects = () => {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 12,
         mass: 0.5
@@ -92,7 +92,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="Projects" className="relative py-20 bg-[#030712] overflow-hidden">
+    <section id="Projects" className="relative py-0 bg-[#030712] overflow-hidden">
       {/* Background Elements */}
       <motion.div
         initial={{ opacity: 0 }}

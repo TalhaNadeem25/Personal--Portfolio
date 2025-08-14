@@ -73,7 +73,7 @@ const Hero = () => {
           <div className="w-full lg:w-1/2">
             <IntersectionObserverComponent>
               <div className="inline-block mb-4 py-1 px-3 bg-cyan-950/30 rounded-full backdrop-blur-sm border border-cyan-800/30 shadow-lg shadow-cyan-900/20">
-                <p className="text-sm font-medium text-cyan-300">Front-End Developer</p>
+                <p className="text-sm font-medium text-cyan-300">Web Developer</p>
               </div>
             </IntersectionObserverComponent>
             
@@ -93,8 +93,8 @@ const Hero = () => {
             <IntersectionObserverComponent>
               <div className="flex flex-wrap gap-4">
                 <a 
-                  href="/TalhaResume.pdf"
-                  download="TalhaResume.pdf"
+                  href="/Talha's Resume.pdf"
+                  download="Talha's Resume.pdf"
                   className="group relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold text-white rounded-full"
                 >
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-cyan-600 via-blue-600 to-cyan-600"></span>

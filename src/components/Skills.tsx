@@ -12,8 +12,7 @@ import { IntersectionObserverComponent } from "../utils/IntersectionObserver";
 const SkillCard = ({ skill, index }: { skill: any; index: number }) => {
   return (
     <IntersectionObserverComponent
-      className="group transition-all duration-700 transform"
-      animationClass="translate-y-8 opacity-0"
+      className="group fade-in"
       rootMargin="0px 0px -100px 0px"
     >
       <div
