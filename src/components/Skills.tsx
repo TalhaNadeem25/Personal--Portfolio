@@ -1,14 +1,13 @@
-import React from "react";
-import { IntersectionObserverComponent } from "../utils/IntersectionObserver";
-import htmlIcon from "../assets/html-5.png";
-import cssIcon from "../assets/css-3.png";
-import jsIcon from "../assets/js.png";
 import reactIcon from "../assets/1174949_js_react js_logo_react_react native_icon.png";
-import cIcon from "../assets/letter-c.png";
 import javaIcon from "../assets/4373217_java_logo_logos_icon.png";
-import androidIcon from "../assets/icons8-android-studio-240.png";
-import nodejsIcon from "../assets/nodejs.png";
+import cssIcon from "../assets/css-3.png";
 import mongodbIcon from "../assets/database-storage.png";
+import htmlIcon from "../assets/html-5.png";
+import androidIcon from "../assets/icons8-android-studio-240.png";
+import jsIcon from "../assets/js.png";
+import cIcon from "../assets/letter-c.png";
+import nodejsIcon from "../assets/nodejs.png";
+import { IntersectionObserverComponent } from "../utils/IntersectionObserver";
 
 const SkillCard = ({ skill, index }: { skill: any; index: number }) => {
   return (
