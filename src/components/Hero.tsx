@@ -93,7 +93,7 @@ const Hero = () => {
             <IntersectionObserverComponent>
               <div className="flex flex-wrap gap-4">
                 <a 
-                  href="/Talha's Resume.pdf"
+                  href="/Talha'sResume.pdf"
                   download="Talha's Resume.pdf"
                   className="group relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold text-white rounded-full"
                 >

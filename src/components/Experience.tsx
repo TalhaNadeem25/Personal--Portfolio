@@ -17,6 +17,20 @@ interface ExperienceItem {
 const Experience = () => {
   const experiences: ExperienceItem[] = [
     {
+      title: "Business and IT Support Analyst Intern",
+      company: "Komplete Packaging KPAK",
+      location: "Arlington, Texas",
+      duration: "Aug 2025 - Present",
+      description: "Providing comprehensive IT support and business analysis services, focusing on diagnosing and resolving technical issues while analyzing business processes to recommend technology-driven improvements.",
+      technologies: ["IT Support", "System Administration", "Network Troubleshooting", "Business Process Analysis", "Security Management", "User Account Management"],
+      achievements: [
+        "Provide IT support by diagnosing and resolving hardware, software, and network issues for end-users",
+        "Analyze business processes and collaborate with teams to recommend technology-driven improvements",
+        "Configure, monitor, and maintain enterprise systems to ensure reliable and secure operations",
+        "Manage user accounts, access controls, and security permissions in alignment with company policies"
+      ]
+    },
+    {
       title: "Design / Print Associate",
       company: "The American Domino Company",
       location: "Arlington, Texas",
@@ -193,4 +207,4 @@ const Experience = () => {
   );
 };
 
-export default Experience; 
+export default Experience;
